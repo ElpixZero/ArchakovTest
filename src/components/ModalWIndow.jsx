@@ -48,6 +48,8 @@ const useStyles = makeStyles(theme => ({
     fontSize: 13,
     color: '#1E88E5',
     fontWeight: 600,
+    marginTop: 10,
+    marginBottom: 5,
   },
   selectBorder: {
     border: '1px solid #A3D2FC',
@@ -60,7 +62,7 @@ const useStyles = makeStyles(theme => ({
   fieldContainer: {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 24,
   },
   dialogDescription: {
     fontWeight: 500,
