@@ -4,6 +4,10 @@ import {Button, Dialog, Select, MenuItem, OutlinedInput, FormControl, InputLabel
 import {Close as CloseIcon, ExpandMore, SaveAlt, Cached as CachedIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
+  button: {
+    display: 'block',
+    marginTop: 10,
+  },
   root: {
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,
@@ -125,10 +129,12 @@ const DialogContent = withStyles(theme => ({
 }))(MuiDialogContent);
 
 export default function CustomizedDialogs({data, onPreview, selectedFields}) {
+  console.log(selectedFields);
+
   const classes = useStyles();
   const [isOpenModal, setOpenModal] = React.useState(false);
-  const fieldLabels = ['', 'Customer Name', 'Phone', 'Email', 'Contacts']; //пустая строка для "Не выбрано"
-  const [dialogData, setDialogData] = React.useState( ( ) => {
+  const fieldLabels = ['', 'Name', 'Phone', 'Email', 'Contacts']; //пустая строка для "Не выбрано"
+  const [dialogData, setDialogData] = React.useState(() => {
     if (selectedFields) {
       let resultArray = [];
       for (const key in selectedFields) {
@@ -147,7 +153,7 @@ export default function CustomizedDialogs({data, onPreview, selectedFields}) {
       return {
         label: '',
         value: item
-      }
+      };
     });
   });
 
@@ -188,11 +194,11 @@ export default function CustomizedDialogs({data, onPreview, selectedFields}) {
 
   return (
     <MuiThemeProvider theme={THEME}>
-      <Button variant="outlined" color="primary" onClick={setOpenModal.bind(this, true)}>
-        Open dialog
-      </Button>
+        <Button className={classes.button} variant="outlined" color={selectedFields ? 'primary' : 'secondary'} onClick={setOpenModal.bind(this, true)}>
+          Open dialog {selectedFields ?  `with selected: ${JSON.stringify(selectedFields)}` : 'without selected' }
+        </Button>
 
-      <Dialog classes={{paper: classes.dialogContainer}} onClose={setOpenModal.bind(this, false)} aria-labelledby="customized-dialog-title" open={isOpenModal}>
+        <Dialog classes={{paper: classes.dialogContainer}} onClose={setOpenModal.bind(this, false)} aria-labelledby="customized-dialog-title" open={isOpenModal}>
         <DialogTitle className={classes.dialogTitle} id="customized-dialog-title" onClose={setOpenModal.bind(this, false)}>
           <span className={classes.dialogTitle}>
             <SaveAlt className={classes.dialogTitleIcon} />  Import Customers Base

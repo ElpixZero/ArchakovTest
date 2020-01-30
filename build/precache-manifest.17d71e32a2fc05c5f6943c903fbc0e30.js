@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c44bd4026044fe049c89fe06beb72392",
+    "revision": "8c643cfe94d7d35cb18acafaed6933e6",
     "url": "/ArchakovTest/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ArchakovTest/static/js/2.dc2df6b3.chunk.js.LICENSE"
   },
   {
-    "revision": "9036a2e9c10dc93fbdd3",
-    "url": "/ArchakovTest/static/js/main.446b6663.chunk.js"
+    "revision": "ed1b59f7cb382bf4753f",
+    "url": "/ArchakovTest/static/js/main.f6815184.chunk.js"
   },
   {
     "revision": "30d3eae8d7bb43c0bbbd",
