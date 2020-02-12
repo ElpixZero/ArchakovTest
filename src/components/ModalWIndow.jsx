@@ -129,8 +129,6 @@ const DialogContent = withStyles(theme => ({
 }))(MuiDialogContent);
 
 export default function CustomizedDialogs({data, onPreview, selectedFields}) {
-  console.log(selectedFields);
-
   const classes = useStyles();
   const [isOpenModal, setOpenModal] = React.useState(false);
   const fieldLabels = ['', 'Name', 'Phone', 'Email', 'Contacts']; //пустая строка для "Не выбрано"
